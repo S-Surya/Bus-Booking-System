@@ -11,8 +11,8 @@ import {
 } from "reactstrap";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import classnames from "classnames";
-import { connect } from 'react-redux';
-import { addUser,findUser } from '../actions/userActions';
+import { connect } from "react-redux";
+import { addUser, findUser } from "../actions/userActions";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -33,45 +33,40 @@ class Signup extends React.Component {
   }
 
   state = {
-    email : '',
-    username : '',
-    password : '',
-    dob : ''
+    email: "",
+    username: "",
+    password: "",
+    dob: ""
   };
 
-onChange = (e) => {
-    this.setState({ [e.target.name] : e.target.value });
-};
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
 
     const newUser = {
-        email : this.state.email,
-        username : this.state.username,
-        password : this.state.password,
-        dob : this.state.dob
-    }
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      dob: this.state.dob
+    };
 
     console.log(newUser);
 
     //add user via add user action.
-      this.props.addUser(newUser);
-
-
-    }
-
-    
+    this.props.addUser(newUser);
+  };
 
   render() {
-
-   
     return (
-      <div className="Login">
-        <div className="LoginBox">
+      <div className="Login1">
+        <div className="LoginBox1">
           <Nav tabs>
             <NavItem>
-              <NavLink href="/login/"
+              <NavLink
+                href="/login/"
                 className={classnames({ active: this.state.activeTab === "1" })}
                 onClick={() => {
                   this.toggle("1");
@@ -81,7 +76,8 @@ onSubmit = (e) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/signup/"
+              <NavLink
+                href="/signup/"
                 className={classnames({ active: this.state.activeTab === "2" })}
                 onClick={() => {
                   this.toggle("2");
@@ -95,16 +91,16 @@ onSubmit = (e) => {
             <TabPane tabId="1">
               <Row>
                 <Col sm={{ size: 6, offset: 3 }}>
-                  <Form onSubmit = {this.onSubmit}>
+                  <Form onSubmit={this.onSubmit}>
                     <FormGroup>
                       <Label for="exampleName">Username</Label>
                       <Input
                         type="text"
-                        name = "username"
+                        name="username"
                         id="exampleName"
                         placeholder="Username"
-                        onChange = {this.onChange}
-                        value = {this.state.username}
+                        onChange={this.onChange}
+                        value={this.state.username}
                       />
                     </FormGroup>
                     <FormGroup>
@@ -114,11 +110,11 @@ onSubmit = (e) => {
                         name="password"
                         id="examplePassword"
                         placeholder="password"
-                        onChange = {this.onChange}
-                        value = {this.state.password}
+                        onChange={this.onChange}
+                        value={this.state.password}
                       />
                     </FormGroup>
-                    <Button color="success" >Submit</Button>
+                    <Button color="success">Submit</Button>
                   </Form>
                 </Col>
               </Row>
@@ -126,7 +122,7 @@ onSubmit = (e) => {
             <TabPane tabId="2">
               <Row>
                 <Col sm={{ size: 6, offset: 3 }}>
-                  <Form onSubmit = {this.onSubmit}>
+                  <Form onSubmit={this.onSubmit}>
                     <FormGroup>
                       <Label for="exampleEmail">Email</Label>
                       <Input
@@ -134,8 +130,8 @@ onSubmit = (e) => {
                         name="email"
                         id="exampleEmail"
                         placeholder="Email"
-                        onChange = {this.onChange}
-                        value = {this.state.email}
+                        onChange={this.onChange}
+                        value={this.state.email}
                       />
                     </FormGroup>
                     <FormGroup>
@@ -145,8 +141,8 @@ onSubmit = (e) => {
                         name="username"
                         id="exampleName"
                         placeholder="username"
-                        onChange = {this.onChange}
-                        value = {this.state.username}
+                        onChange={this.onChange}
+                        value={this.state.username}
                       />
                     </FormGroup>
                     <FormGroup>
@@ -156,8 +152,8 @@ onSubmit = (e) => {
                         name="password"
                         id="examplePassword"
                         placeholder="password"
-                        onChange = {this.onChange}
-                        value = {this.state.password}
+                        onChange={this.onChange}
+                        value={this.state.password}
                       />
                     </FormGroup>
                     <FormGroup>
@@ -167,8 +163,8 @@ onSubmit = (e) => {
                         name="dob"
                         id="exampleDOB"
                         placeholder="Date of birth"
-                        onChange = {this.onChange}
-                        value = {this.state.dob}
+                        onChange={this.onChange}
+                        value={this.state.dob}
                       />
                     </FormGroup>
                     <Button /*href="/login/"*/ color="success">Submit</Button>
@@ -184,8 +180,10 @@ onSubmit = (e) => {
 }
 
 const mapStateToProps = state => ({
-      user : state.user
+  user: state.user
 });
 
-
-export default connect(mapStateToProps, {addUser,findUser})(Signup);
+export default connect(
+  mapStateToProps,
+  { addUser, findUser }
+)(Signup);

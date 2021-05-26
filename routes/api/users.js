@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const collection = 'users';
 const collection1 = 'BusData';
+const collection2 = 'prevbookings';
 const db = require('../../db');
 //User Model
 const User = require('../../models/User');
@@ -12,7 +13,7 @@ const tkt = require('../../models/tkt');
 
 var result1  = [];
 
-router.post('https://easygo-t22.herokuapp.com/signup',(req,res) => {
+router.post('/signup',(req,res) => {
     
 
     db.getDb().collection(collection).insertOne({
@@ -30,7 +31,7 @@ router.post('https://easygo-t22.herokuapp.com/signup',(req,res) => {
     });
 });
 
-router.post('https://easygo-t22.herokuapp.com/login',(req,res) => {
+router.post('/login/:username',(req,res) => {
   
     console.log('inside possst');
     console.log(req.body.username);
@@ -56,7 +57,7 @@ router.post('https://easygo-t22.herokuapp.com/login',(req,res) => {
     
 });
 
-router.post('https://easygo-t22.herokuapp.com/book_tickets',(req,res) => {
+router.post('/book_tickets',(req,res) => {
     console.log(req.body.source);
     console.log(req.body.destination);
     db.getDb().collection(collection1).find({
@@ -72,12 +73,83 @@ router.post('https://easygo-t22.herokuapp.com/book_tickets',(req,res) => {
     });
 });
 
-router.get('https://easygo-t22.herokuapp.com/book_tickets/bus_list',(req,res) => {
+router.get('/book_tickets/bus_list/:username/:source/:destination/:doj',(req,res) => {
 
-;
+    
+    console.log('now inside router.get and about to do the main finding part');
+
+    db.getDb().collection(collection1).find({
+        source : req.params.source,
+        destination : req.params.destination
+    }).toArray((err,result) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(req.params.username);
+            console.log(req.params.source);
+            console.log('printing destination');
+            console.log(req.params.destination);
+            console.log(result);
+            res.send(result);
+        }
+    });
+
+
+
 
 });
 
+
+router.post('/book_tickets/bus_list/:username/:source/:destination/:doj',(req,res) => {
+
+    
+    console.log('now inside router.post and about to insert the booking into the database');
+
+    db.getDb().collection(collection2).insertOne({
+        username : req.body.username,
+        bus_id : req.body.id,
+        doj : req.body.doj,
+        nos : req.body.nos,
+        cost : req.body.cost,
+        time : req.body.time
+    },(err,result)=>
+    {
+        if(err) console.log('errrr');
+        else
+        {
+            res.send('succesfully inserted the booking data');
+        }
+    });
+
+
+
+
+});
+
+
+router.get('/mybook/:username',(req,res) => {
+
+    
+    console.log(`now inside router.get and about to return the past bookings of the user with name ${req.params.username}`);
+
+    db.getDb().collection(collection2).find({
+        username : req.params.username
+    }).toArray((err,result) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(req.params.username);
+            console.log(result);
+            res.send(result);
+        }
+    });
+
+
+
+
+});
 
 module.exports = router;
 

@@ -42,7 +42,7 @@ export default class NavBar extends React.Component {
                 <NavLink href="/book_tickets/">Book Now</NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink href="https://easygo-t22.herokuapp.com/login/">SignUp/Login</NavLink>
+                <NavLink href="/login/">SignUp/Login</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
