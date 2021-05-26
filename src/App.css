@@ -1,0 +1,165 @@
+.header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 100, 0.6643032212885154) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  height: 27.5rem;
+}
+.App {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 100, 0.6643032212885154) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  height: 27.5rem;
+}
+.hf {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 100, 0.6643032212885154) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+}
+
+.logo {
+  height: 30px;
+  width: 10;
+}
+
+.ft {
+  position: relative;
+  top: 250px;
+  background: white;
+  text-align: left;
+  display: flex;
+  height: 50px;
+  width: 600px;
+}
+
+.fromt {
+  box-sizing: border-box;
+}
+
+.Login {
+  background-color: #08aeea;
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+
+  background-blend-mode: multiply, multiply;
+  background-blend-mode: multiply, multiply;
+  height: 40rem;
+  box-sizing: border-box;
+}
+.Login1 {
+  background-color: #08aeea;
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+
+  background-blend-mode: multiply, multiply;
+  background-blend-mode: multiply, multiply;
+  height: 40rem;
+  box-sizing: border-box;
+}
+
+.Login .LoginBox {
+  position: relative;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  top: 15%;
+  left: 30%;
+  height: 55%;
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.Login1 .LoginBox1 {
+  position: relative;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  top: 15%;
+  left: 30%;
+  height: 84%;
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.Login.LoginBox:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.Login1.LoginBox1:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.BookT {
+  position: relative;
+  background: #00b4db;
+  background: -webkit-linear-gradient(to right, #0083b0, #00b4db);
+  background: linear-gradient(to right, #0083b0, #00b4db);
+  top: 8rem;
+  left: 10rem;
+  height: 25rem;
+  width: 30rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 2%;
+}
+
+.BookT:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.book {
+  background: #59c173; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #5d26c1,
+    #a17fe0,
+    #59c173
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #5d26c1,
+    #a17fe0,
+    #59c173
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 40rem;
+  box-sizing: border-box;
+  border-radius: 0%;
+}
+.touch {
+  background: #5cb85c;
+}
+
+.UC {
+  position: absolute;
+  left: 43rem;
+  top: 17rem;
+  height: 18rem;
+  width: 40rem;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2%;
+}
+
+.UC:hover {
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-sub {
+  position: relative;
+  color: #5d26c1;
+  top: 10%;
+  left: 5rem;
+}
+
+.nb {
+  background-color: transparent !important;
+}
